@@ -1,0 +1,8 @@
+README.md
+main.py
+pyproject.toml
+plangen.egg-info/PKG-INFO
+plangen.egg-info/SOURCES.txt
+plangen.egg-info/dependency_links.txt
+plangen.egg-info/requires.txt
+plangen.egg-info/top_level.txt

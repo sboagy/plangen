@@ -1,0 +1,102 @@
+race_date: "2025-09-07"
+start_plan: "2025-05-19"
+max_long_run: 22
+est_avg_pace: 10.00  # used for rough-calculation of duration to distance miles
+
+run_descriptions:
+  E:
+    description: "easy aerobic run"
+    peak:
+      duration: 60
+    start:
+      duration: 40
+    taper_end:
+      duration: 10
+  E4x10s:
+    description: "EZ Aerobic / Recovery Run with 4x10s strides"
+    peak:
+      duration: 50
+    start:
+      duration: 40
+    taper_end:
+      duration: 35
+  O:
+    description: "off / rest day"
+  HTh:
+    description: "higher RSS/TSS day, threshold run"
+    peak:
+      duration: 70
+    start:
+      duration: 55
+    taper_end:
+      duration: 35
+  HTe:
+    description: "higher RSS/TSS day, tempo run"
+    peak:
+      duration: 65
+    start:
+      duration: 55
+    taper_end:
+      duration: 35
+  D:
+    description: "(not currently used) double day with interval and threshold or intervals and easy run"
+  L:
+    description: "long run"
+    peak:
+      miles: 22
+    start:
+      miles: 11
+    taper_end:
+      miles: 0
+  T3:
+    description: "test 3 minute"
+    duration: 45
+  T20:
+    description: "test 20 minute"
+    duration: 60
+  RD:
+    description: "Race Day"
+    miles: 26.2
+days_per_microcycle: 10  
+cycle_descriptions:
+  "normal":
+    description: "normal cycle"
+    "microcycle":
+      - E # easy aerobic run
+      - E # easy aerobic run
+      - HTh # higher RSS/TSS day, threshold run
+      - E # easy aerobic run
+      - E # easy aerobic run
+      - HTe # higher RSS/TSS day, tempo run
+      - E # easy aerobic run
+      - E4x10s # easy aerobic run
+      - L # long run
+      - O # off / rest day
+
+  "test":
+    description: "test cycle"
+    "microcycle":
+      - E4x10s # easy aerobic run
+      - T20 # higher RSS/TSS day, including intervals or tempos
+      - E # easy aerobic run
+      - E4x10s # easy aerobic run
+      - T3 # higher RSS/TSS day, including intervals or tempos
+      - E # easy aerobic run
+      - E # easy aerobic run
+      - E # easy aerobic run
+      - L # long run
+      - O # off / rest day
+cycles:
+  - type: "test" # 1
+  - type: "normal" # 2
+  - type: "normal" # 3
+  - type: "normal" # 4
+  - type: "test" # 5
+  - type: "normal" # 6
+  - type: "normal" # 7
+  - type: "normal" # 8
+  - type: "test" # 9
+    peak: true
+  - type: "normal" # 10
+  - type: "test" # 11
+  - type: "normal" # 12

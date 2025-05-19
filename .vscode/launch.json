@@ -1,0 +1,32 @@
+{
+  "version": "0.2.0",
+  "configurations": [
+     {
+      "type": "debugpy",
+      "request": "launch",
+      "name": "Launch main.py with arguments",
+      "program": "${workspaceFolder}/main.py",
+      "args": [
+        "sboag-beantown-plan.yaml",
+        "training_plan.xlsx"
+        // "${input:inputJson}",
+        // "${input:outputXlsx}"
+      ],
+      "console": "integratedTerminal"
+    }
+  ],
+  "inputs": [
+    {
+      "id": "inputJson",
+      "type": "promptString",
+      "default": "example.json",
+      "description": "Enter the path to the input JSON file (e.g., example.json)"
+    },
+    {
+      "id": "outputXlsx",
+      "type": "promptString",
+      "default": "output.xlsx",
+      "description": "Enter the path for the output XLSX file (e.g., output.xlsx)"
+    }
+  ]
+}
