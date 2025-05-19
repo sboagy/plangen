@@ -11,7 +11,7 @@ run_descriptions:
   E:
     description: "easy aerobic run"
     peak:
-      duration: 60
+      duration: 70
     start:
       duration: 40
     taper_end:
