@@ -2,6 +2,10 @@ race_date: "2025-09-07"
 start_plan: "2025-05-19"
 max_long_run: 22
 est_avg_pace: 10.00  # used for rough-calculation of duration to distance miles
+weight_at_start: 170
+auto_cp_pre: 182
+stryd_weight: 170
+stryd_height: 71
 
 run_descriptions:
   E:
