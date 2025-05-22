@@ -13,7 +13,7 @@ run_descriptions:
     peak:
       duration: 70
     start:
-      duration: 40
+      duration: 45
     taper_end:
       duration: 10
   E4x10s:
@@ -81,13 +81,13 @@ cycle_descriptions:
     description: "test cycle"
     "microcycle":
       - E4x10s # easy aerobic run
-      - T20 # higher RSS/TSS day, including intervals or tempos
+      - T3 # 3 minute auto-cp test
       - E # easy aerobic run
       - E4x10s # easy aerobic run
-      - T3 # higher RSS/TSS day, including intervals or tempos
+      - T20 # 20 minute auto-cp test
       - E # easy aerobic run
       - E # easy aerobic run
-      - E # easy aerobic run
+      - E4x10s # easy aerobic run
       - L # long run
       - O # off / rest day
 cycles:
