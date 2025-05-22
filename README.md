@@ -1,6 +1,8 @@
 # plangen
 
-A Python project that processes a JSON file and outputs a spreadsheet-compatible file (XLSX) for easy import into Google Sheets.
+A Python project that processes a JSON file that describes some basic train plan parameters, and outputs a sort-of training plan in the form of a spreadsheet-compatible file (XLSX) for easy import into Google Sheets.
+
+This work is experimental at best.  Meant to be paired to the Stryd system.
 
 ## Requirements
 - Python 3.8+
