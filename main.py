@@ -136,7 +136,7 @@ def main():
                 if mileage is not None:
                     mileage_constrained = True
             ws.append([
-                workout_id,
+                workout_id+1,
                 microcycle_id,
                 intra_idx,
                 date.strftime("%Y-%m-%d"),
@@ -211,7 +211,7 @@ def main():
     for cell in ws[ws.max_row]:
         cell.alignment = Alignment(wrap_text=True)
         cell.font = Font(bold=True)
-    # Use the tracked row ranges for summary formulas
+    microcycle_summary_start = ws.max_row + 1
     for i, (mid, _, _, _, _) in enumerate(microcycle_summaries):
         summary_row = ws.max_row + 1
         if i < len(microcycle_row_ranges):
@@ -221,6 +221,10 @@ def main():
                 duration_formula = f"=SUM(H{microcycle_start}:H{microcycle_end})/60"
                 overall_formula = f"=B{summary_row} + (C{summary_row}*60)/$B$13"
                 ws.append([mid, mileage_formula, duration_formula, overall_formula])
+    # Set number format for summary table columns to 0.00
+    for row in ws.iter_rows(min_row=microcycle_summary_start, max_row=ws.max_row, min_col=2, max_col=4):
+        for cell in row:
+            cell.number_format = '0.00'
 
     ws.append([])
     ws.append(["Weekly Summaries"])
@@ -229,7 +233,7 @@ def main():
     for cell in ws[ws.max_row]:
         cell.alignment = Alignment(wrap_text=True)
         cell.font = Font(bold=True)
-    # For each week summary, calculate the row range in the main table
+    week_summary_start = ws.max_row + 1
     week_start = microcycle_row_ranges[0][0] if microcycle_row_ranges else 1
     week_number = 1
     for i, (week, miles, hours, _, _) in enumerate(week_summaries):
@@ -241,6 +245,10 @@ def main():
         ws.append([week_number, mileage_formula, duration_formula, overall_formula])
         week_start = week_end + 1
         week_number += 1
+    # Set number format for weekly summary table columns to 0.00
+    for row in ws.iter_rows(min_row=week_summary_start, max_row=ws.max_row, min_col=2, max_col=4):
+        for cell in row:
+            cell.number_format = '0.00'
 
     wb.save("training_plan.xlsx")
     print("Training plan saved to training_plan.xlsx")
