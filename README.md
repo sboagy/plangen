@@ -26,3 +26,7 @@ python main.py <input.json> <output.xlsx>
 - `<output.xlsx>`: Path to the output XLSX file.
 
 The resulting XLSX can be imported directly into Google Sheets and will support formulas if present in the data.
+
+## License
+
+This project is licensed under the MIT License. See the [LICENSE](LICENSE) file for details.
